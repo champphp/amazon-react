@@ -1,19 +1,35 @@
 import React, { useState } from 'react'
 import './Login.css'
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+
+import { auth } from './../firebase'
 
 
 function Login() {
+  const history = useHistory()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const signIn = (e) => {
     e.preventDefault()
+    auth.signInWithEmailAndPassword(email, password)
+      .then((data) => {
+        history.push('/')
+      })
+      .catch((error) => alert(error.message))
+
   }
 
   const register = (e) => {
     e.preventDefault()
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((data) => {
+        if (data) {
+          history.push('/')
+        }
+      })
+      .catch((error) => alert(error.message))
   }
 
   return (
@@ -30,23 +46,23 @@ function Login() {
         <h1>Sign-in</h1>
         <form>
           <h5>E-mail</h5>
-          <input type="text" 
-            value={email} 
+          <input type="text"
+            value={email}
             onChange={e => setEmail(e.target.value)}
           />
 
           <h5>Password</h5>
-          <input type="password" 
+          <input type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
 
-          <button 
+          <button
             className="login__signin__btn"
             type="submit"
             onClick={signIn}
           >
-              Sign In
+            Sign In
           </button>
         </form>
 
@@ -55,7 +71,7 @@ function Login() {
           see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
         </p>
 
-        <button 
+        <button
           className="login__register__btn"
           onClick={register}
         >
