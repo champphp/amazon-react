@@ -1,0 +1,85 @@
+.footer {
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  margin          : 30px 0 8px 0;
+  padding         : 0 0 7px 0;
+  background-color: #232F3E;
+  min-width       : 1000px;
+  max-height: 800px;
+  position: relative;
+}
+
+.footer__back_to_top {
+  cursor          : pointer;
+  margin-bottom   : 40px;
+  background-color: #37475A;
+}
+
+.footer__back_to_top>span {
+  display    : block;
+  text-align : center;
+  color      : #fff;
+  padding    : 15px 0;
+  line-height: 19px;
+  font-size  : 13px;
+}
+
+.footer__menu {
+  display: table;
+  margin: 0 auto;
+  max-width: 1000px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.footer__menu_row {
+  display: table-cell;
+  padding: 0 10px;
+}
+
+.footer_menu_row_space {
+  display: table-cell;
+  padding: 0 10px;
+  width  : 10%;
+}
+
+.footer__menu_row_header {
+  margin: 6px 0 14px 0;
+}
+
+.footer__menu_row_header>span {
+  font-weight: 700;
+  color      : #FFF;
+  font-family: inherit;
+  font-size  : 16px;
+  white-space: nowrap;
+}
+
+.footer__menu_row>ul {
+  padding: 0;
+  margin : 0;
+}
+
+.footer__menu_row>ul>li {
+  margin: 0 0 10px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.footer__menu_row>ul>li>a {
+  color          : #DDD;
+  font-family    : inherit;
+  line-height: 120%;
+  font-size: 15px;
+  list-style: disc;
+  font-family: inherit;
+  white-space: normal;
+  text-decoration: none;
+}
+
+.footer__menu_row>ul>li>a:hover {
+  font-family: inherit;
+  text-decoration: underline;
+}
