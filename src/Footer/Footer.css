@@ -8,6 +8,7 @@
   min-width       : 1000px;
   max-height: 800px;
   position: relative;
+  margin-bottom: 0;
 }
 
 .footer__back_to_top {
