@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
 
 import Header from './Header/Header'
 import Home from './Home/Home'
@@ -11,6 +11,7 @@ import Checkout from './Checkout/Checkout'
 import Login from './Login/Login'
 import Footer from './Footer/Footer'
 import Payment from './Payment/Payment'
+import Orders from './Orders/Orders'
 
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider'
@@ -59,7 +60,7 @@ function App() {
         </Route>
         <Route path="/orders">
           <Header />
-          <h1>Orders Page</h1>
+          <Orders />
           <Footer />
         </Route>
         <Route path="/">
